@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>現代企業官網 - AI 客服系統</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-icon">🚀</span>
+          <span class="logo-text">企業官網</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">首頁</a></li>
+          <li><a href="#about" class="nav-link">關於我們</a></li>
+          <li><a href="#services" class="nav-link">服務</a></li>
+          <li><a href="#contact" class="nav-link">聯絡</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 主內容 -->
+    <main>
+      <!-- 首頁 Hero 區域 -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">歡迎來到我們</h1>
+          <p class="hero-subtitle">
+            提供優質的產品和服務，24/7 AI 客服支援
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="scrollTo('services')">
+              瞭解更多
+            </button>
+            <button class="btn btn-secondary" onclick="scrollTo('contact')">
+              聯絡我們
+            </button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="floating-card">✨</div>
+        </div>
+      </section>
+
+      <!-- 關於我們 -->
+      <section id="about" class="about">
+        <div class="container">
+          <h2>關於我們</h2>
+          <div class="about-grid">
+            <div class="about-card glass-card">
+              <div class="card-icon">🎯</div>
+              <h3>我們的使命</h3>
+              <p>提供卓越的產品和服務，滿足客戶的各種需求。</p>
+            </div>
+            <div class="about-card glass-card">
+              <div class="card-icon">💡</div>
+              <h3>創新理念</h3>
+              <p>不斷探索新技術，為客戶帶來最新的解決方案。</p>
+            </div>
+            <div class="about-card glass-card">
+              <div class="card-icon">🤝</div>
+              <h3>客戶至上</h3>
+              <p>專業團隊 24/7 為您提供支援和協助。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 服務展示 -->
+      <section id="services" class="services">
+        <div class="container">
+          <h2>我們的服務</h2>
+          <div class="services-grid">
+            <div class="service-card glass-card">
+              <div class="service-icon">📦</div>
+              <h3>產品銷售</h3>
+              <p>高品質產品，滿足各種需求。</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon">🔧</div>
+              <h3>技術支援</h3>
+              <p>快速解決技術問題，提供最佳方案。</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon">📞</div>
+              <h3>客戶服務</h3>
+              <p>專業客服團隊，隨時準備幫助。</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-icon">💬</div>
+              <h3>AI 客服</h3>
+              <p>智能客服系統，即時回應您的需求。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI 聊天客服區域 -->
+      <section id="chat" class="chat-section">
+        <div class="container">
+          <h2>AI 客服助手</h2>
+          <div class="chat-container glass-card">
+            <div class="chat-box">
+              <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                  <div class="message-content">
+                    你好！👋 有什麼我可以幫你的嗎？
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-container">
+              <input
+                type="text"
+                id="chat-input"
+                class="chat-input"
+                placeholder="輸入您的問題..."
+                onkeypress="handleChatKeyPress(event)"
+              />
+              <button class="chat-send-btn" onclick="sendMessage()">
+                發送
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 聯絡表單 -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2>聯絡我們</h2>
+          <div class="contact-content">
+            <div class="contact-info glass-card">
+              <h3>聯絡方式</h3>
+              <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                  <p class="info-label">地址</p>
+                  <p>台灣，台北市</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📧</span>
+                <div>
+                  <p class="info-label">郵箱</p>
+                  <p>contact@company.com</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📱</span>
+                <div>
+                  <p class="info-label">電話</p>
+                  <p>+886 2 1234 5678</p>
+                </div>
+              </div>
+            </div>
+
+            <form id="contact-form" class="contact-form glass-card">
+              <div class="form-group">
+                <label for="name">名稱 *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="請輸入您的名稱"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">郵箱 *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="請輸入您的郵箱"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">主題 *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="請輸入主題"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">消息 *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="5"
+                  placeholder="請輸入您的消息"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">發送</button>
+              <div id="form-message" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 企業官網. 版權所有。</p>
+        <p>使用 Node.js + Express + AI 客服系統構建</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

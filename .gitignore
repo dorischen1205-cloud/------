@@ -1,0 +1,35 @@
+# 環境變數
+.env
+.env.local
+
+# 依賴關係
+node_modules/
+package-lock.json
+yarn.lock
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# 日誌
+logs/
+*.log
+npm-debug.log*
+
+# 構建輸出
+dist/
+build/
+.next/
+.vercel/
+
+# 臨時文件
+tmp/
+temp/
+*.tmp
